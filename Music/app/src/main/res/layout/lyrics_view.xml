@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~ /**
+  ~  * This file is part of QuickLyric
+  ~  * Created by geecko
+  ~  *
+  ~  * QuickLyric is free software: you can redistribute it and/or modify
+  ~  * it under the terms of the GNU General Public License as published by
+  ~  * the Free Software Foundation, either version 3 of the License, or
+  ~  * (at your option) any later version.
+  ~  *
+  ~  * QuickLyric is distributed in the hope that it will be useful,
+  ~  * but WITHOUT ANY WARRANTY; without even the implied warranty of
+  ~  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  ~  * GNU General Public License for more details.
+  ~  * You should have received a copy of the GNU General Public License
+  ~  * along with QuickLyric.  If not, see <http://www.gnu.org/licenses/>.
+  ~  */
+  -->
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.evandroid.musica.view.SwipeRefreshLayout
+        android:id="@+id/refresh_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <com.evandroid.musica.view.NonFocusableNestedScrollView
+            android:id="@+id/scrollview"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="?android:attr/colorBackground"
+            android:fillViewport="true"
+            android:scrollbarStyle="outsideOverlay"
+            tools:context=".MainLyricActivity">
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <!--
+                        Fixme minHeight trick
+                    !-->
+                    <TextSwitcher
+                        android:id="@+id/switcher"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="top"
+                        android:focusable="false"
+                        android:minHeight="530dp"
+                        android:inAnimation="@android:anim/fade_in"
+                        android:measureAllChildren="false"
+                        android:outAnimation="@android:anim/fade_out"
+                        android:padding="5dp"/>
+
+                    <com.evandroid.musica.view.LrcView
+                        android:id="@+id/lrc_view"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="top"
+                        android:focusable="false"
+                        android:visibility="gone"
+                        android:layout_marginRight="15dp"
+                        android:layout_marginLeft="15dp"
+                        app:currentTextColor="@android:color/holo_orange_light"
+                        app:dividerHeight="10dip"
+                        app:normalTextColor="?android:textColorPrimary"
+                        app:rows="9"
+                        app:textSize="@dimen/txt_size"/>
+
+                    <EditText
+                        android:id="@+id/edit_lyrics"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="top"
+                        android:background="@android:color/transparent"
+                        android:fontFamily="sans-serif-light"
+                        android:freezesText="true"
+                        android:gravity="center_horizontal"
+                        android:inputType="textMultiLine"
+                        android:lineSpacingExtra="3dp"
+                        android:measureAllChildren="false"
+                        android:minHeight="530dp"
+                        android:padding="5dp"
+                        android:textColor="?android:textColorPrimary"
+                        android:visibility="gone"/>
+
+                    <TextView
+                        android:id="@+id/id3_tv"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="10dp"
+                        android:clickable="true"
+                        android:gravity="center"
+                        android:onClick="id3PopUp"
+                        android:text="@string/from_id3"
+                        android:textColor="?android:textColorSecondary"
+                        android:visibility="gone"/>
+                </LinearLayout>
+
+                <include
+                    layout="@layout/error_msg"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+
+            </FrameLayout>
+        </com.evandroid.musica.view.NonFocusableNestedScrollView>
+
+    </com.evandroid.musica.view.SwipeRefreshLayout>
+
+</FrameLayout>

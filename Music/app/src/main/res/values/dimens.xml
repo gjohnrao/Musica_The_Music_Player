@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <dimen name="child_card_padding">5dp</dimen>
+    <dimen name="app_bar_layout_height">192dp</dimen>
+    <dimen name="fab_top_margin">75dp</dimen>
+    <dimen name="txt_size">18sp</dimen>
+    <dimen name="large_txt_size">23sp</dimen>
+    <dimen name="small_txt_size">16sp</dimen>
+    <dimen name="drawer_width">290dp</dimen> <!-- match_parent !-->
+    <dimen name="drawer_row_height">48dp</dimen>
+    <dimen name="row_height">72dp</dimen>
+    <dimen name="line_spacing">3dp</dimen>
+    <dimen name="expanded_title_margin_bottom">162dp</dimen>
+    <dimen name="intro_fab_elevation">0dp</dimen>
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+
+
+</resources>

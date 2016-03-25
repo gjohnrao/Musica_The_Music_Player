@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~ /**
+  ~  * This file is part of QuickLyric
+  ~  * Created by geecko
+  ~  *
+  ~  * QuickLyric is free software: you can redistribute it and/or modify
+  ~  * it under the terms of the GNU General Public License as published by
+  ~  * the Free Software Foundation, either version 3 of the License, or
+  ~  * (at your option) any later version.
+  ~  *
+  ~  * QuickLyric is distributed in the hope that it will be useful,
+  ~  * but WITHOUT ANY WARRANTY; without even the implied warranty of
+  ~  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  ~  * GNU General Public License for more details.
+  ~  * You should have received a copy of the GNU General Public License
+  ~  * along with QuickLyric.  If not, see <http://www.gnu.org/licenses/>.
+  ~  */
+  -->
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+    <PreferenceCategory android:title="@string/pref_look_feel_category">
+        <com.evandroid.musica.view.AppCompatListPreference
+            android:defaultValue="0"
+            android:entries="@array/themes"
+            android:entryValues="@array/themes_values"
+            android:key="pref_theme"
+            android:title="@string/pref_theme"/>
+        <org.jraf.android.backport.switchwidget.SwitchPreference
+            android:defaultValue="false"
+            android:key="pref_night_mode"
+            android:summary="@string/pref_night_mode_sum"
+            android:title="@string/pref_night_mode"/>
+        <CheckBoxPreference
+            android:defaultValue="true"
+            android:key="pref_force_screen_on"
+            android:summary="@string/pref_force_screen_sum"
+            android:title="@string/pref_force_screen_on"/>
+        <CheckBoxPreference
+            android:defaultValue="true"
+            android:key="pref_opendyslexic"
+            android:summary="@string/pref_opendyslexic_sum"
+            android:title="@string/pref_opendyslexic"/>
+    </PreferenceCategory>
+
+    <PreferenceCategory android:title="@string/download_category">
+        <com.evandroid.musica.view.AppCompatListPreference
+            android:entries="@array/providers"
+            android:entryValues="@array/providers_values"
+            android:key="pref_providers"
+            android:summary="@string/pref_providers_sum"
+            android:title="@string/pref_providers"/>
+        <com.evandroid.musica.view.AppCompatListPreference
+            android:defaultValue="0"
+            android:entries="@array/artwork_download"
+            android:entryValues="@array/artworks_values"
+            android:key="pref_artworks"
+            android:summary="@string/artworks_pref_sum"
+            android:title="@string/artworks_pref_title"/>
+        <CheckBoxPreference
+            android:defaultValue="false"
+            android:key="pref_auto_save"
+            android:summary="@string/pref_auto_save_sum"
+            android:title="@string/pref_auto_save"/>
+    </PreferenceCategory>
+
+    <PreferenceCategory android:title="@string/pref_scrobbling_category">
+        <CheckBoxPreference
+            android:defaultValue="true"
+            android:key="pref_filter_20min"
+            android:summary="@string/pref_20min_ignore_sum"
+            android:title="@string/pref_20min_ignore"/>
+        <CheckBoxPreference
+            android:defaultValue="true"
+            android:key="pref_auto_refresh"
+            android:summary="@string/pref_auto_refresh_summary"
+            android:title="@string/pref_auto_refresh_title"/>
+        <com.evandroid.musica.view.AppCompatListPreference
+            android:defaultValue="0"
+            android:entries="@array/notifications"
+            android:entryValues="@array/notifications_values"
+            android:key="pref_notifications"
+            android:summary="@string/pref_notifications_sum"
+            android:title="@string/pref_notifications"/>
+    </PreferenceCategory>
+</PreferenceScreen>

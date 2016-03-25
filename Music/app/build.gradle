@@ -1,0 +1,79 @@
+apply plugin: 'com.android.application'
+
+
+repositories {
+    mavenCentral()
+    jcenter()
+    maven {
+        url 'https://oss.sonatype.org/content/repositories/snapshots/'
+    }
+    flatDir {
+        dirs 'libs'
+    }
+}
+
+buildscript {
+    repositories {
+        mavenCentral()
+        jcenter()
+    }
+
+    dependencies {
+        classpath 'com.android.tools.build:gradle:1.5.0'
+    }
+}
+
+
+
+android {
+
+    sourceSets {
+        main {
+            assets.srcDirs = ['assets']
+        }
+    }
+    compileSdkVersion 23
+    buildToolsVersion "23.0.2"
+
+    defaultConfig {
+        applicationId "com.evandroid.musica"
+        minSdkVersion 15
+        targetSdkVersion 23
+        versionCode 100
+        versionName "100"
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_7
+        targetCompatibility JavaVersion.VERSION_1_7
+    }
+
+    buildTypes {
+        release {
+            shrinkResources false
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    lintOptions {
+        disable 'InvalidPackage', 'UnusedAttribute', 'GradleDynamicVersion'
+    }
+}
+
+dependencies {
+    compile 'com.android.support:support-v4:23.+'
+    compile 'com.android.support:appcompat-v7:23.+'
+    compile 'com.android.support:support-v13:23.+'
+    //noinspection GradleCompatible
+    compile 'com.android.support:design:23.2.0'
+    compile 'com.android.support:cardview-v7:23.+'
+    compile 'com.android.support:percent:23.+'
+    compile 'com.balysv:material-ripple:1.0.2'//john
+    compile 'com.mcxiaoke.volley:library:1.0.+'//john
+    compile 'com.squareup.retrofit:retrofit:1.9.0'
+    compile 'com.squareup.okhttp:okhttp:2.+'//johnny
+    compile 'org.jraf:android-switch-backport:2.0.1'//john
+    compile 'com.wdullaer:materialdatetimepicker:1.4.2'//john
+    compile 'org:jaudiotagger:2.0.3'//john
+    compile 'org.jsoup:jsoup:1.8.+'
+}

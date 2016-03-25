@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string-array name="URI_values">
+        <item>content://media/external/audio/media</item>
+        <item>content://com.google.android.music.MusicContent/audio</item>
+    </string-array>
+
+</resources>
